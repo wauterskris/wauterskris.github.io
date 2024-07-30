@@ -1,0 +1,1847 @@
+<html>
+
+<head>
+
+<base target="_blank"/>
+
+<style>
+
+a { text-decoration: none;}
+a:hover { background-color: lightgreen; text-decoration: underline;}
+
+th { text-decoration: underline; font-weight: bold; }
+
+td:first-child { font-weight:bold; }
+
+tr:nth-child(odd) {background: #CCC}
+tr:nth-child(even) {background: #FFF }
+tr:hover td{ background-color: lightgreen; }
+tr.selected { background-color: #FF3F3F; }
+
+tr[disabled] td { display:none;}
+
+table { border-spacing: 1px; white-space: nowrap; }
+
+</style>
+</head>
+
+<body onload="go(); highlight_row();" bgcolor="#E6E6FA">
+<!-- tr.oddrow { display: block; border-bottom: 1px solid #F00; } -->
+
+<!-- td.redbgc {background: #FF0000} -->
+<!-- tr { display: block; border-bottom: 1px solid #000; } -->
+<!-- table { border: 0px solid black; } -->
+<!-- th { border: 0px solid black; } -->
+<!-- td { border: 0px solid black; } -->
+
+<!--
+	<tr><td>titel</td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+-->
+
+<script>
+function go() {
+	let reds=["scene-rls","rmz.cr","rarbgaccess.org","eztv","go.tlc.com","www.tlc.com","sharethefiles.com","hdencode.com","123movies.","megaddl.co","yourbittorrent.com","rlsbb.ru","rlsbb.cc"]
+	
+	let url=[	"rmz.cr",	"rarbgaccess.org",	"thetvdb.com",	"scene-rls.net","thefutoncritic.com",	"rottentomatoes.com",	"eztv.re",	"opensubtitles.org","addic7ed.com",	"epguides.com",	"www.tlc.com",	"go.tlc.com",	"sharethefiles.com","vrt.be/vrtnu/","discoveryplus.",	"discovery.com","amc.com",	"netflix.com",	"amazon.com",	"hulu.com",	"imdb.com",	"wetv.com",	"vtm.be/vtmgo",	"cbs.com",	"primevideo.com",	"videoland.com","tvgids.tv","mtv.",	"youtube.",	"vijf.be",	"123movies.",	"tvunderground.org.ru",	"wikipedia.org","moviemeter.nl","rlsbb.ru",	"apple.com","goplay.be","hbomax.com",	"history.",	".foxtv.be","hdencode.com",	"tvmaze.com",	"megaddl.co",	"usanetwork.com",	"channel4.com",	"bbc.co.uk","radiotimes.com",	"telenettv.be",	"eztv-torrent.com",	"yourbittorrent.com",	"sky.com",	"sho.com",	"rlsbb.cc",	"roku.com"]
+	let site=[	"rmz",		"rarbg",			"TheTVDB",		"scene-rls",	"FutonCritic",			"Rotten Tomatoes",		"eztv",		"opensubs",			"addic7ed",		"epguides", 	"TLC",			"TLC GO",		"STF",				"vrtnu",		"discovery+",		"Discovery",	"AMC",		"Netflix",		"Amazon",		"Hulu",		"IMDB",		"wetv",		"VTM GO",		"CBS",		"primevideo",		"videoland",	"tvgids",	"MTV",	"youtube",	"Vijf",		"123movies",	"tvu",					"wiki",			"moviemeter",	"rlsbb",	"apple",	"goplay",	"hbo",			"history",	"foxtv",	"hdencode",		"tvmaze",		"megaddl",		"usanetwork",		"channel4",		"bbc",		"radiotimes",		"telenettv",	"eztvtor",			"yourbittorrent",		"sky",		"showtime",	"rlsbb",	"Roku"]
+	
+	var elements = document.getElementsByTagName("td");
+
+	for (i = 0; i < elements.length; i++) {
+		reds.forEach(function(item, index, array) {
+			var intext=elements[i].innerHTML.includes(item);
+			if (intext) {
+				elements[i].innerHTML=elements[i].innerHTML.replace("<a ","<a onclick='return false' ");
+				elements[i].style.backgroundColor = '#ffb3b3';
+			}
+		})
+		url.forEach(function(item, index, array) {
+			var intext=elements[i].innerHTML.includes(item);
+			if (intext) {
+				elements[i].innerHTML=elements[i].innerHTML.replace("</a>"," " + site[index] + "</a>");
+			}
+		})
+	}
+}
+
+
+function highlight_row() {
+    var table = document.getElementById('display-table');
+    var cells = table.getElementsByTagName('td');
+
+    for (var i = 0; i < cells.length; i++) {
+        // Take each cell
+        var cell = cells[i];
+        // do something on onclick event for cell
+        cell.onclick = function () {
+            // Get the row id where the cell exists
+            var rowId = this.parentNode.rowIndex;
+
+            var rowsNotSelected = table.getElementsByTagName('tr');
+            for (var row = 0; row < rowsNotSelected.length; row++) {
+                <!-- rowsNotSelected[row].style.backgroundColor = ""; -->
+                rowsNotSelected[row].classList.remove('selected');
+            }
+            var rowSelected = table.getElementsByTagName('tr')[rowId];
+            <!-- rowSelected.style.backgroundColor = "red"; -->
+            rowSelected.className += " selected";
+        }
+    }
+}
+
+function togglehiatus() {
+   if (document.getElementById("hiatus-table").style.display === "none") document.getElementById("hiatus-table").style.display = "block";
+   else document.getElementById("hiatus-table").style.display = "none";
+}
+
+
+</script>
+
+<title>links</title>
+<a id="boven" href="#beneden" target="_self">&#8595; naar beneden &#8595;</a>
+<p>
+
+
+<!-- -------------------------------------------------START ANDERE ------------------------------------------------------------------- -->
+
+<a href="https://remote.utorrent.com/">remote uTorrent</a>&ensp;
+<a href="../">ptc</a>&ensp;
+<u>
+<a href="https://userbase.be/forum/viewtopic.php?p=944201#p944201">UB epic</a>
+<a href="https://userbase.be/forum/viewtopic.php?p=939498#p939498">UB indie</a>
+<a href="https://userbase.be/forum/viewtopic.php?p=943472#p943472">UB Steam</a>
+<a href="https://userbase.be/forum/viewtopic.php?p=943299#p943299">UB GOG</a>
+</u>&ensp;
+
+<a href="https://telenet.tv/">Telenet.tv</a>
+<a href="https://yelo.telenet.tv/">Yelo</a>
+<a href="https://yelo.telenet.tv/bewaard/opgenomen">Yelo opnames</a>&ensp;
+<a href="https://gmail.com/">Gmail</a>&ensp;
+<a href="https://userbase.be/forum/search.php?search_id=newposts">Userbase</a>&ensp;
+<u><a href="https://www.indiegala.com/giveaways/">Indiegala</a>&ensp; fallout, control, batman, hitman, commandos, matador, rage</u>
+<a href="https://freebies.indiegala.com/">Indiegala freebies</a>&ensp;
+<a href="https://www.gog.com/en/games?priceRange=0,0&hideDLCs=true&hideOwned=true">GOG free</a>&ensp;
+<a href="https://store.epicgames.com/en-US/free-games">epicgames</a>
+<a href="https://docs.google.com/document/d/e/2PACX-1vR4HiFWbKcKdJA1zkI7oYZ7F2aHDgkVIDQ-LsG03ualkkmuSCcYiElEqW4IXZF2EhH7UIMSvLd75pQB/pub">KEI maaltijden</a>
+<br>
+
+
+<a href="https://my.jdownloader.org/">myjdownloader</a> jdownloader.crackjack@spamgourmet.com &ensp; <a href="https://moneroocean.stream/#/dashboard?addr=447d5WzUjMw5S5APg1GmkUC9jCTUGguhae3dne7nGisk6vToshSLNgR1fKJecziq8S686YRqj3zyzP3ypsJvSPNUHSL2wnR">moneroocean</a><br>
+
+vrt/vtm sites: gclomtrp@sharklasers.com / testtest<br>
+videoland: videoland@getnada.com / testtest01<br>
+<a href="https://sharethefiles.com/forum/azlists.php">sharethefiles</a><br>
+<a href="https://easydmarc.com/tools/dmarc-aggregated-reports">DMARC reports</a>
+<p>
+
+
+<!-- -------------------------------------------------EINDE ANDERE ------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+<!-- -------------------------------------------------START UPCOMING ------------------------------------------------------------------- -->
+<table id="display-table" >
+	<tr><th>film/serie</th></tr>
+	
+
+	<tr><td>(ZO) Ex on the Beach Double Dutch</td>
+		<td><a href="https://www.thetvdb.com/series/ex-on-the-beach-double-dutch/seasons/official/8"></a></td>
+		<td><a href="https://www.mtv.be/shows/fivk3i/ex-on-the-beach-double-dutch"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/ex-on-the-beach-double-dutch/24175580"></a></td>
+		<td><a href="https://www.videoland.com/series/1033/ex-on-the-beach-double-dutch/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(ZO) Ex on the Beach Double Dutch Meekijken met</td>
+		<td><a href="https://www.thetvdb.com/series/ex-on-the-beach-double-dutch-meekijken-met/seasons/official/7"></a></td>
+		<td><a href="https://www.mtv.be/shows/d0il95/ex-on-the-beach-double-dutch-meekijken-met"></a></td>
+		<td><a href="https://www.youtube.com/playlist?list=PLZjXCWioXDAUxJasoxDYbfokFQWqIlI3A"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/ex-on-the-beach-double-dutch-meekijken-met/24128953"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+		
+
+
+	<tr><td bgcolor=#666666></td></tr>
+	<tr></tr>
+<!-- -----------------------------------------------------END UPCOMING --------------------------------------------------------------------------------- -->
+
+
+
+	<tr><td>(MA) Darcey & Stacey</td>
+		<td><a href="https://thetvdb.com/series/darcey-and-stacey/seasons/official/3"></a></td>
+		<td><a href="https://rmz.cr/darcey-stacey"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=darcey%20stacey"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt12872744/"></a></td>
+		<td><a href="https://go.tlc.com/show/darcey-stacey-tlc-atve-us"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=132240&search=Search"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?f=132&t=280013&p=1633133"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/darcey-and-stacey/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/darcey_and_stacey/s03"></a></td>
+	</tr>
+
+	<tr><td>(MA) Darcey & Stacey Pillow Talk</td>
+		<td><a href="https://thetvdb.com/series/pillow-talk-tlc/seasons/official/14"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=darcey+stacey+pillow+talk"></a></td>
+		<td><a href="https://go.tlc.com/show/darcey-stacey-tlc-atve-us"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/darcey-and-stacey-pillow-talk/listings/"></a></td>
+	</tr>
+
+	<tr><td>(DI) 90DF The Other Way</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-the-other-way/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=the+other+way"></a></td>
+		<td><a href="https://rmz.cr/90-day-finacee-the-other-way"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=6645&search=Search"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-the-other-way/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?p=1629333"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/90-day-fiance-the-other-way/listings/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=the%20other%20way&cat=all"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Stargate SG-1</td>
+		<td><a href="https://thetvdb.com/series/stargate-sg-1/seasons/official/9"></a></td>
+	</tr>
+
+	<tr><td>(ZO) 90 Day Pillow Talk</td>
+		<td><a href="https://thetvdb.com/series/pillow-talk-tlc/seasons/official/20"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+pillow"></a></td>
+		<td><a href="https://rmz.cr/90-day-fiance-pillow-talk"></a></td>
+		<td><a href="https://eztv.re/search/?q2=15509&search=Search"></a></td>
+		<td><a href="https://www.discoveryplus.co.uk/show/90-day-pillow-talk-happily-ever-after">HEA</a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-pillow-talk-the-other-way/">TOW</a></td>
+		<td><a href="https://www.tlc.com/tv-shows/the-family-chantel-pillow-talk/">Chantel</a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-pillow-talk-before-the-90-days/">BT90D</a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-pillow-talk/"></a></td>
+	</tr>
+
+	<tr><td>(MO) Extreme Sisters</td>
+		<td><a href="https://thetvdb.com/series/extreme-sisters/seasons/official/2"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=extreme%20sisters&cat=all"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=extreme+sisters"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/extreme-sisters/listings/"></a></td>
+		<td><a href="https://www.tlc.com/shows/extreme-sisters"></a></td>
+		<td><a href="https://tv.apple.com/us/show/extreme-sisters/umc.cmc.31ojqa92sthz3hrivwywqsrka"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>(ZO) SEAL Team</td>
+		<td><a href="https://www.thetvdb.com/series/seal-team/seasons/official/6"></a></td>
+		<td><a href="https://rmz.cr/seal-team"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6473344/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut,eng/idmovie-553953#season-3"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6403"></a></td>
+		<td><a href="https://www.epguides.com/sealteam/"></a></td>
+		<td><a href="https://www.cbs.com/shows/seal-team/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/seal-team/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/seal_team/s05"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/seal-team/listings/">movie TDB</a></td>
+	</tr>
+
+	<tr><td>(ZO) The Equalizer</td>
+		<td><a href="https://thetvdb.com/series/the-equalizer-2021/seasons/official/3"></a></td>
+		<td><a href="https://rmz.cr/the-equalizer-2021"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=the%20equalizer&cat=all"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=the%20equalizer%202021"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt11242246/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-1008258"></a></td>
+		<td><a href="https://www.addic7ed.com/show/8254"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/equalizer/listings/"></a></td>
+		<td><a href="https://www.cbs.com/shows/the-equalizer/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/the_equalizer_2020/s02"></a></td>
+	</tr>
+
+	<tr><td>The Last of Us</td>
+		<td><a href="https://thetvdb.com/series/the-last-of-us/seasons/official/1"></a></td>
+		<td><a href="http://www.thefutoncritic.com/showatch/last-of-us/listings/"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt3581920/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=last%20of%20us&cat=all"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-1207014"></a></td>
+		<td><a href="https://www.imdb.com/title/tt3581920/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>See</td>
+		<td><a href="https://thetvdb.com/series/see"></a></td>
+		<td><a href="http://www.thefutoncritic.com/showatch/see/listings/"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7949218/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=See.S01.WEB-DL.x264-ION10&cat=all"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-853415"></a></td>
+		<td><a href="https://www.imdb.com/title/tt7949218/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Tales of the Walking Dead</td>
+		<td><a href="https://thetvdb.com/series/tales-of-the-walking-dead/seasons/official/1"></a></td>
+		<td><a href="http://www.thefutoncritic.com/showatch/tales-of-the-walking-dead/listings/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=tales%20of%20the%20walking%20dead&cat=all"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt15669534/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-all/idmovie-1162099"></a></td>
+		<td><a href="https://www.addic7ed.com/show/9024"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(ZO) 90 Day Fianc&eacute; UK</td>
+		<td><a href="https://thetvdb.com/series/90-day-fiance-uk/seasons/official/1"></a></td>
+		<td><a href="http://www.thefutoncritic.com/showatch/90-day-fiance-uk/listings/"></a></td>
+		<td><a href="https://www.primevideo.com/detail/90-Day-Fiance-UK/0HSN71DI3D4ZHWTXQ0UPFZ7IX8/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=90%20day%20fiance%20uk&cat=all"></a></td>
+		<td><a href="https://www.discoveryplus.com/gb/show/90-day-fiance-uk"></a></td>
+		<td><a href="https://therokuchannel.roku.com/details/8ffd760101f655ad9409aec22229acbd/"></a></td>
+		<td><a href="https://tv.apple.com/us/show/90-day-fiance-uk/umc.cmc.6hd14gm5a6es9fi6twligxhe3"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Loren & Alexei: After the 90 Days</td>
+		<td><a href="https://thetvdb.com/series/loren-alexei-after-the-90-days/seasons/official/2"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=loren%20and&cat=all"></a></td>
+		<td><a href="https://www.amazon.com/Loren-Alexei-After-Days-Season/dp/B0B8QK7F32"></a></td>
+		<td><a href="https://www.imdb.com/title/tt16375462/episodes"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(MA) 90 DF HEA?</td>
+		<td><a href="https://thetvdb.com/series/90-day-fiance-happily-ever-after/seasons/official/7"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=happily%20ever%20after"></a></td>
+		<td><a href="https://eztv.re/search/?q2=5152&search=Search"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?f=132&t=279369&p=1632952"></a></td>
+		<td><a href="https://watchtvseries.si/90-day-fiance-happily-ever-after/"></a></td>
+		<td><a href="https://ww2.123moviesfun.ch/watch-tv-90-day-fianc:-pillow-talk-season-2-episode-9-online-123movies-14976"></a></td>
+		<td><a href="https://www.amazon.com/gp/video/detail/B0B786GTR8/"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-happily-ever-after/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-fiance-happily-ever-after/listings/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=90%20day%20fiance%20happily%20ever%20s07&cat=all"></a></td>
+	</tr>
+
+	<tr><td>(VR) 90 Day: The Single Life</td>
+		<td><a href="https://thetvdb.com/series/90-day-the-single-life/seasons/official/3"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=90%20day%20single%20life&cat=all"></a></td>
+		<td><a href="https://rmz.cr/90-day-the-single-life"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt13990474/"></a></td>
+		<td><a href="https://tv.apple.com/us/show/90-day-the-single-life/umc.cmc.opzd1n0i8vp1tmkiiiibygak"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-the-single-life/listings/"></a></td>
+		<td><a href="https://www.discoveryplus.nl/programmas/90-day-the-single-life">discoveryplus</a></td>
+		<td><a href="https://www.primevideo.com/detail/90-Day-The-Single-Life/0NXY43ETD9C922N9CAEPZOVXSW/"></a></td>
+	</tr>
+
+
+
+	<tr><td>(ZO) 90 DF</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance/seasons/official/10"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+fiance"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt3469050/"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance/"></a></td>
+		<td><a href="https://www.epguides.com/90DayFiance/"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/90-day-fiance/listings/"></a></td>
+		<td><a href="https://www.tvmaze.com/shows/3139/90-day-fiance"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/90_day_fianc_/s09"></a></td>
+		<td><a href="https://www.tlc.com/shows/90-day-fiance/episodes"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=90%20day%20fiance%20S09&cat=all"></a></td>
+	</tr>
+
+	<tr><td>Ozark</td>
+		<td><a href="https://thetvdb.com/series/ozark/seasons/official/1"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80117552"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/ozark/s04"></a></td>
+	</tr>
+
+	<tr><td>Twilight Zone 2002</td>
+		<td><a href="https://thetvdb.com/series/the-twilight-zone-2002/seasons/official/1"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=37166&sid=dacbcead06b3dbed413fe6d5cff26a8b"></a></td>
+	</tr>
+	
+	<tr><td>Das Boot</td>
+		<td><a href="https://www.thetvdb.com/series/das-boot/seasons/1"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5830254/"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/das-boot/1/das-boot-s1a1/"></a></td>
+		<td><a href="https://epguides.com/DasBoot/"></a></td>
+		<td><a href="https://hdencode.com/das-boot-s02-1080p-webrip-ddp5-1-x264-law-19-5-gb/#unlocked"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-699577"></a></td>
+	</tr>
+
+	<tr><td>The Rain</td>
+		<td><a href="https://thetvdb.com/series/the-rain"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6656238/"></a></td>
+		<td><a href="https://rmz.cr/the-rain"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80154610"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6754"></a></td>
+	</tr>
+
+	<tr><td>The (Bronx) Zoo</td>
+		<td><a href="https://thetvdb.com/series/the-zoo-2017"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6440422/"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=the%20zoo%202017"></a></td>
+		<td><a href="https://www.animalplanet.com/tv-shows/the-zoo/">animalplanet</a></td>
+		<td><a href="https://www.imdb.com/title/tt6440422/"></a></td>
+	</tr>
+
+	<tr><td>Murder, She Wrote</td>
+		<td><a href="https://thetvdb.com/series/murder-she-wrote"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0086765/"></a></td>
+		<td><a href="https://rmz.cr/murder-she-wrote"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=murder%20she%20wrote"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-all/idmovie-29708"></a></td>
+		<td><a href="https://www.addic7ed.com/show/830"></a></td>
+		<td><a href="https://www.imdb.com/title/tt0284330/">film</a></td>
+	</tr>
+
+	<tr><td>The Unit</td>
+		<td><a href="https://thetvdb.com/series/the-unit"></a></td>
+		<td><a href="https://rmz.cr/the-unit"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0460690/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-18679"></a></td>
+		<td><a href="https://www.addic7ed.com/show/40"></a></td>
+	</tr>
+
+	<tr><td>Airwolf</td>
+		<td><a href="https://www.thetvdb.com/series/airwolf"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0086662/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=48644"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-22186"></a></td>
+		<td><a href="https://www.addic7ed.com/show/1438"></a></td>
+		<td><a href="https://rarbgaccess.org/torrent/tbf37uq">film</a></td>
+	</tr>
+
+	<tr><td>The Sopranos</td>
+		<td><a href="https://www.thetvdb.com/series/the-sopranos"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0141842/"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-669"></a></td>
+		<td><a href="https://www.addic7ed.com/show/55"></a></td>
+	</tr>
+
+	<tr><td>The Man in the High Castle</td>
+		<td><a href="https://www.thetvdb.com/series/the-man-in-the-high-castle"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt1740299/"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-65494"></a></td>
+		<td><a href="https://www.addic7ed.com/show/4961"></a></td>
+		<td><a href="https://www.primevideo.com/region/eu/detail/0JC7XEURLF9L91OK9UB702LRVC/ref=atv_nb_lcl_nl_NL?language=nl_NL&ie=UTF8"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(WO) Temptation Island BE-NL</td>
+		<td><a href="https://www.thetvdb.com/series/temptation-island-be-nl/seasons/official/12"></a></td>
+		<td><a href="https://www.vijf.be/temptation-island"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/temptation-island/24175295"></a></td>
+		<td><a href="https://www.videoland.com/series/948/temptation-island/3260"></a></td>
+		<td><a href="https://www.forumfeminarum.nl/t/temptation-island/1299/4755"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>NCIS</td>
+		<td><a href="https://www.thetvdb.com/series/ncis/seasons/official/1"></a></td>
+		<td><a href="https://rmz.cr/ncis-naval-criminal-investigative-service"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0364845/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=25418&sid=b6326f801968cc831b37a9f591a83edf"></a></td>
+		<td><a href="https://www.cbs.com/shows/ncis/"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-14941"></a></td>
+		<td><a href="https://www.addic7ed.com/show/132"></a></td>
+		<td><a href="https://tvunderground.org.ru/index.php?show=season&sid=629"></a></td>
+		<td><a href="https://nl.wikipedia.org/wiki/Lijst_van_afleveringen_van_NCIS#Seizoen_14"></a></td>
+		<td><a href="https://www.moviemeter.nl/series/season/8141"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Cities of the Underworld</td>
+		<td><a href="https://www.thetvdb.com/series/cities-of-the-underworld"></a></td>
+		<td><a href="https://rmz.cr/cities-of-the-underworld"></a></td>
+		<td><a href="https://www.allyoulike.com/281794/cities-of-the-underworld-the-complete-series-season-1-and-2-hdtv-and-season-3-dvdrip/">all you like</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Mysteries at the Museum</td>
+		<td><a href="https://www.thetvdb.com/series/mysteries-at-the-museum"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt2076566/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?f=131&t=208695&p=1609190"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=1443&search=Search"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Lustery</td>
+		<td><a href="https://rarbgaccess.org/torrents.php?search=lustery&category=4&page=30"></a></td>
+		<td><a href="https://eroticity.net/forum.php">eroticity</a></td>
+		<td><a href="https://0xxx.ws/index.php?catalogue=Lustery">0xxx.ws</a></td>
+		<td><a href="https://www.naughtyblog.org/lustery-melissa/">naughtyblog</a></td>
+		<td><a href="https://www.hotpornfile.org/?s=lustery+e15">hotpornfile</a></td>
+		<td><a href="https://lustery.com/video/55">lustery</a></td>
+		<td><a href="https://pornbbs.org/showthread.php?982572-Lustery-Com-Siterip-Ubiqfile&p=3181467">pornbbs</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Red Dwarf</td>
+		<td><a href="https://www.thetvdb.com/series/red-dwarf"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt0094535/"></a></td>
+		<td><a href="https://www.addic7ed.com/show/166"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Manifest</td>
+		<td><a href="https://www.thetvdb.com/series/manifest"></a></td>
+		<td><a href="https://rmz.cr/manifest/s"></a></td>
+		<td><a href="https://www.rarbgaccess.org/tv/tt8421350/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-674031"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6923"></a></td>
+		<td><a href="https://www.links.movieseriestv.net/?v=HA">movieseriestv</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Elementary</td>
+		<td><a href="https://www.thetvdb.com/series/elementary"></a></td>
+		<td><a href="https://rmz.cr/elementary"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt2191671/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=222666"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-135839"></a></td>
+		<td><a href="https://www.addic7ed.com/show/2864"></a></td>
+		<td><a href="https://snahp.it/elementary-s01-s06-1080p-amzn-nf-web-dl-x264-mixed/">snahp</a></td>
+		<td><a href="https://nl.wikipedia.org/wiki/Lijst_van_afleveringen_van_Elementary"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Easy</td>
+		<td><a href="https://www.thetvdb.com/series/easy"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5562056/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-479114"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6006/Easy"></a></td>
+		<td><a href="https://epguides.com/easy/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80095699"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Midsomer Murders</td>
+		<td><a href="https://www.thetvdb.com/series/midsomer-murders/seasons/official/21"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/midsomer-murders/21/midsomer-murders-s21a3/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>De dokter Bea show</td>
+		<td><a href="https://thetvdb.com/series/341916-show"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/de-dokter-bea-show.relevant/"></a></td>
+		<td><a href="https://www.ketnet.be/kijken/de-dokter-bea-show">ketnet</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Black Mirror</td>
+		<td><a href="https://www.thetvdb.com/series/black-mirror"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt2085059/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-118794"></a></td>
+		<td><a href="https://www.addic7ed.com/show/2035"></a></td>
+		<td><a href="https://www.epguides.com/blackmirror/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The Brave</td>
+		<td><a href="https://thetvdb.com/series/the-brave/seasons/official/1"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6461736/"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-553610"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6396"></a></td>
+		<td><a href="https://www.epguides.com/brave/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Deep State</td>
+		<td><a href="https://www.thetvdb.com/series/deep-state"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt4785472/"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6846"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/deep-state/22173915"></a></td>
+		<td><a href="https://epguides.com/DeepState/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Dark</td>
+		<td><a href="https://www.thetvdb.com/series/dark"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5753856/"></a></td>
+		<td><a href="https://www.addic7ed.com/season/6660/1"></a></td>
+		<td><a href="https://www.imdb.com/title/tt5753856/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Lost in Space (2018)</td>
+		<td><a href="https://thetvdb.com/series/lost-in-space-2018"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=lost+in+space"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5232792/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-629324"></a></td>
+		<td><a href="https://www.addic7ed.com/season/6797/1"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+<p>
+
+
+
+
+<!-- -----------------------------------------------------START HIATUS --------------------------------------------------------------------------------- -->
+
+
+<input type="button" id="togglehiatus" value="Toon/verberg hiatus" onclick="togglehiatus();" />
+
+<table id="hiatus-table" style="display:none;">
+	<tr><th>film/serie</th></tr>
+
+	<tr><td>?/2023: serie Berlin (casa de papel)</td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>2023 TWD: Isle of the Dead</td>
+		<td><a href="https://thetvdb.com/series/isle-of-the-dead"></a></td>
+		<td><a href="http://thefutoncritic.com/news/2022/03/07/lauren-cohan-and-jeffrey-dean-morgan-to-star-in-new-series-set-in-the-walking-dead-universe-isle-of-the-dead-541113/20220307amc01/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(MA) Snowpiercer</td>
+		<td><a href="https://thetvdb.com/series/snowpiercer/seasons/official/3"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=snowpiercer"></a></td>
+		<td><a href="https://search.rlsbb.ru/?s=snowpiercer&p=1"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6156584/"></a></td>
+		<td><a href="https://rmz.cr/snowpiercer-2020"></a></td>
+		<td><a href="https://www.addic7ed.com/show/7909"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-932454"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80177458"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/snowpiercer/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/snowpiercer/s03"></a></td>
+	</tr>
+
+
+	
+
+
+
+
+	<tr><td>The Family Chantel</td>
+		<td><a href="https://www.thetvdb.com/series/the-family-chantel/seasons/official/3"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=family%20chantel"></a></td>
+		<td><a href="https://rmz.cr/the-family-chantel"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=9569&search=Search"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/the-family-chantel/"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/the-family-chantel-pillow-talk/"></a></td>
+		<td><a href="https://search.rlsbb.ru/?s=family%20chantel"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/family-chantel/listings/"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The Hot Zone</td>
+		<td><a href="https://thetvdb.com/series/the-hot-zone"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt4131818/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-755010"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/hot-zone/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(ZO) I Love A Mama's Boy</td>
+		<td><a href="https://www.thetvdb.com/series/i-love-a-mamas-boy/seasons/official/2"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=love%20a%20mama%20boy"></a></td>
+		<td><a href="https://rmz.cr/i-love-a-mamas-boy"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/i-love-a-mamas-boy/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/i-love-a-mamas-boy/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>AYTO NL</td>
+		<td><a href="https://thetvdb.com/series/are-you-the-one-de-perfecte-match"></a></td>
+		<td><a href="https://mtv.nl/areyoutheone"></a></td>
+		<td><a href="https://www.videoland.com/series/500746/are-you-the-one-de-perfecte-match"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+
+	<tr><td>90DF The Other Way Pillow Talk</td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-pillow-talk-the-other-way/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(ZO) 90 Day Bares All</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-bares-all/seasons/official/2"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+bares"></a></td>
+		<td><a href="https://rmz.cr/90-day-bares-all"></a></td>
+		<td><a href="https://tv.apple.com/us/show/90-day-bares-all/umc.cmc.dqi41znxqnks6s6fc6r9oh8v"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-bares-all/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+
+	<tr><td>Chapelwaite</td>
+		<td><a href="https://thetvdb.com/series/chapelwaite/seasons/official/1"></a></td>
+		<td><a href="https://rmz.cr/chapelwaite"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt11525188/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut,eng/idmovie-1067233"></a></td>
+		<td><a href="https://www.addic7ed.com/show/8523"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/chapelwaite/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(ZA) Sex Tape DE</td>
+		<td><a href="https://www.thetvdb.com/series/sex-tape-deutschland-und-wie-macht-ihrs/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=sex+tape+germany"></a></td>
+		<td><a href="https://www.goplay.be/sex-tape-duitsland"></a></td>
+		<td><a href="https://www.telenettv.be/nl/tv/channel-asset.html/lgi-be-prod-master%3Avijfhd/location/28001/1628372100000.html">telenettv</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(MA) You, Me & My Ex</td>
+		<td><a href="https://www.thetvdb.com/series/you-me-and-my-ex/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=you+me+ex"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/you-me-my-ex/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/you-me-and-my-ex/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(MA) sMothered</td>
+		<td><a href="https://thetvdb.com/series/smothered/seasons/official/3"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=smothered"></a></td>
+		<td><a href="https://rmz.cr/smothered-2019-1"></a></td>
+		<td><a href="https://rarbgaccess.org/torrent/k4bps6l#expand"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=6871&search=Search"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/smothered/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/smothered/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>(DO) FBoy Island</td>
+		<td><a href="https://www.thetvdb.com/series/fboy-island/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=fboy+island"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt14825858/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/fboy-island/listings/"></a></td>
+		<td><a href="https://play.hbomax.com/page/urn:hbo:page:GYN4ywAXUS1OLNgEAAAHg:type:series"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+
+	<tr><td>(DI) So Freakin Cheap</td>
+		<td><a href="https://www.thetvdb.com/series/so-freakin-cheap/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=so+freakin+cheap"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/so-freakin-cheap/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/so-freakin-cheap/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(ZO) Love In Paradise: The Caribbean</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-caribbean-love/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=Love+in+Paradise+The+Caribbean"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=313558&search=Search"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/love-in-paradise-the-caribbean/listings/"></a></td>
+		<td><a href="https://www.discoveryplus.co.uk/show/love-in-paradise-the-caribbean"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Walking Dead Origins</td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=walking%20dead"></a></td>
+		<td><a href="https://www.amc.com/twdu/the-walking-dead-origins"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Squid Game</td>
+		<td><a href="https://thetvdb.com/series/squid-game/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/?s=squid+game"></a></td>
+		<td><a href="https://rmz.cr/squid-game"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt10919420/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>Van Helsing</td>
+		<td><a href="https://www.thetvdb.com/series/van-helsing/seasons/official/5"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=van+helsing"></a></td>
+		<td><a href="https://rmz.cr/van-helsing-2016"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5197820/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-467913"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>War of the Worlds</td>
+		<td><a href="https://www.thetvdb.com/series/war-of-the-worlds-2019"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=war+of+the+worlds"></a></td>
+		<td><a href="https://rmz.cr/-47"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt9686194/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-847172"></a></td>
+		<td><a href="https://www.addic7ed.com/show/7627"></a></td>
+		<td><a href="https://www.foxtv.be/programmas/fox/war-of-the-worlds"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/war-of-the-worlds/listings/"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Control Z</td>
+		<td><a href="https://www.thetvdb.com/series/control-z"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=control+z"></a></td>
+		<td><a href="https://rmz.cr/control-z"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt11937662/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/81021245"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/control-z/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Sex Education</td>
+		<td><a href="https://www.thetvdb.com/series/sex-education/seasons/official/3"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=sex+education"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7767422/"></a></td>
+		<td><a href="https://www.addic7ed.com/show/7154"></a></td>
+		<td><a href="https://rmz.cr/sex-education"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/sex-education/listings/"></a></td>
+		<td><a href="https://epguides.com/SexEducation/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80197526"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Into The Night</td>
+		<td><a href="https://www.thetvdb.com/series/into-the-night"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=into+the+night"></a></td>
+		<td><a href="https://rmz.cr/into-the-night-2020"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt10919486/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/81008221"></a></td>
+		<td><a href="https://hdencode.com/into-the-night-s01-720p-nf-web-dl-ddp5-1-x264-ntg-2-8-gb/#unlocked"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/into-the-night/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>90DF TOW Strikes Back!</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-tow-strikes-back/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90%20day%20fiance%20tow%20strikes"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-fiance-the-other-way-strikes-back/listings/"></a></td>
+		<td><a href="https://www.discoveryplus.co.uk/show/90-day-fiance-tow-strikes-back"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>90 Day Foody Call</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-foody-call/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+foody+call"></a></td>
+		<td><a href="https://www.discoveryplus.nl/programmas/90-day-foody-call"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-foody-call/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>The FBI Declassified</td>
+		<td><a href="https://www.thetvdb.com/series/the-fbi-declassified/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?p=2&s=fbi%20declassified"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt13081068/"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=162130&search=Search"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/fbi-declassified/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Floribama Shore</td>
+		<td><a href="https://www.thetvdb.com/series/floribama-shore/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=floribama+shore"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7577814/"></a></td>
+		<td><a href="https://123movies.domains/tvseries/floribama-shore-season-1/SQA6Aeyx/WPKWwNGS"></a></td>
+		<td><a href="https://www.mtv.com/shows/tpb1z7/mtv-floribama-shore"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The Lost Gold Of WWII</td>
+		<td><a href="https://thetvdb.com/series/lost-gold-of-world-war-ii"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?p=4&s=lost%20gold%20of%20world"></a></td>
+		<td><a href="https://www.history.nl/show/the-lost-gold-of-wwii"></a></td>
+		<td><a href="https://www.imdb.com/title/tt9799150"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/lost-gold-of-world-war-ii/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>90 Day Lovers' Collection</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-lovers-collection/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+lovers"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-lovers-collection/listings/"></a></td>
+		<td><a href="https://www.discoveryplus.nl/programmas/90-day-fiance-lovers-collection"></a></td>
+		<td><a href="https://tv.apple.com/us/show/90-day-lovers-collection/umc.cmc.39cucs6wcr5xekpsxyqrlsng9"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Home (2019)</td>
+		<td><a href="https://www.thetvdb.com/series/home-2019/seasons/official/1"></a></td>
+		<td><a href="https://rmz.cr/home-2019"></a></td>
+		<td><a href="https://tvunderground.org.ru/index.php?show=episodes&sid=101932"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-all/idmovie-739627"></a></td>
+		<td><a href="https://www.imdb.com/title/tt9883888/"></a></td>
+		<td><a href="https://www.channel4.com/programmes/home/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Death in Paradise</td>
+		<td><a href="https://www.thetvdb.com/series/death-in-paradise"></a></td>
+		<td><a href="https://rmz.cr/death-in-paradise"></a></td>
+		<td><a href="https://old2.rlsbb.ru/death-in-paradise-s07e02-720p-hdtv-x264-organic/"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt1888075/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=206834"></a></td>
+		<td><a href="https://www.bbc.co.uk/programmes/b01pvmf6"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-117618"></a></td>
+		<td><a href="https://www.addic7ed.com/show/1927"></a></td>
+		<td><a href="https://epguides.com/DeathinParadise/"></a></td>
+	</tr>
+	<tr><td>90 Day Fiancé: Love Games</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-love-games/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+love+games"></a></td>
+		<td><a href="https://www.discoveryplus.nl/programmas/90-day-fiance-love-games"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-fiance-love-games/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>Geordie Shore</td>
+		<td><a href="https://www.thetvdb.com/series/geordie-shore/seasons/official/21"></a></td>
+		<td><a href="https://www.mtv.be/shows/xocqj0/geordie-shore"></a></td>
+		<td><a href="https://tvunderground.org.ru/index.php?show=season&sid=9519"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-all/idmovie-173304"></a></td>
+		<td><a href="https://www.addic7ed.com/show/1650"></a></td>
+		<td><a href="https://www.radiotimes.com/tv-programme/e/ccwxv/geordie-shore-episode-guide/"></a></td>
+		<td><a href="https://www.telenettv.be/nl/tv/channel-asset.html/crid%3A~~2F~~2Ftelenet.be~~2F9ea82469-d05f-40f1-8b07-d6539df06c84/geordie-shore/crid%3A~~2F~~2Ftelenet.be~~2F4db3b829-c609-43e3-b124-20ffe08996c0%2Cimi%3A90e33d150189c917f80be62cd88d14634b31dca9/geordie-shore.html"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	<tr><td>90DF: Self-Quarantined</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-self-quarantined/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=self-quarantined"></a></td>
+		<td><a href="https://search.rlsbb.ru/?s=self-quarantined"></a></td>
+		<td><a href="https://rmz.cr/90-day-fiance-self-quarantined"></a></td>
+		<td><a href="https://eztv-torrent.com/tv-series/90-day-fiance-self-quarantined-7089"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=68638&search=Search"></a></td>
+		<td><a href="https://yourbittorrent.com/?q=self-quarantined"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=279122"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-self-quarantined/"></a></td>
+	</tr>
+
+	<tr><td>90DF HEA Strikes Back!</td>
+		<td><a href="https://thetvdb.com/series/90-day-fiance-hea-strikes-back/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=hea%20strikes%20back"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-hea-strikes-back/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>90DF: B90 Strikes Back!</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-b90-strikes-back/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=b90"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-b90-strikes-back/"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=104149&search=Search"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-fiance-b90-strikes-back/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Are You The One?</td>
+		<td><a href="https://www.thetvdb.com/series/are-you-the-one"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt3484274/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>True Life Crime (ma)</td>
+		<td><a href="https://www.thetvdb.com/series/true-life-crime/seasons/official/1"></a></td>
+		<td><a href="https://www.mtv.be/shows/nhzx53/true-life-crime"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/true-life-crime/24534076"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>90DF What Now? (di)</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-what-now"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=what+now"></a></td>
+		<td><a href="https://www.tlc.com/tv-shows/90-day-fiance-what-now/"></a></td>
+		<td><a href="https://hdencode.com/90-day-fiance-what-now-s01-1080p-web-dl-aac2-0-h-264-btn-2-2-gb/#unlocked"></a></td>
+		<td><a href="https://rmz.cr/90-day-fiance-what-now"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=5918&search=Search"></a></td>
+		<td><a href="https://www.imdb.com/title/tt8718438/"></a></td>
+		<td><a href="https://www.dplay.nl/programmas/90-day-fiance-what-now"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>90DF: Just Landed</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-fiance-just-landed/"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=just%20landed"></a></td>
+		<td><a href="https://eztv.re/search/just-landed"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The End of the F***ing World</td>
+		<td><a href="https://www.thetvdb.com/series/the-end-of-the-f-ing-world"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt6257970/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80175722"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-560133"></a></td>
+		<td><a href="https://www.addic7ed.com/show/6652"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Elite</td>
+		<td><a href="https://www.thetvdb.com/series/elite"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7134908/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-676233"></a></td>
+		<td><a href="https://www.addic7ed.com/show/7024"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Bij Linde</td>
+		<td><a href="https://www.youtube.com/playlist?list=PLvFcxaHLqTzArQcXosaaRoNmqFQuW8x52"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Temptation Talk (wo)</td>
+		<td><a href="https://www.thetvdb.com/series/344535"></a></td>
+		<td><a href="https://www.rtl.nl/gemist/temptation-talk/afleveringen/"></a></td>
+		<td><a href="https://downloadgemist.nl/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Awkward Talk (di)</td>
+		<td><a href="https://www.youtube.com/playlist?list=PLDtvQEuI9DdxD1YiGl6mpE0FEpHCSNX_n"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Debation Island (di)</td>
+		<td><a href="https://www.thetvdb.com/series/debation-island/seasons/official/3"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/de-ideale-wereld/"></a></td>
+		<td><a href="https://www.youtube.com/playlist?list=PLnXE6DCTzWKPscQ7ph5qV2fwXJNEO5vTm"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Goedele on Top (vr)</td>
+		<td><a href="https://www.thetvdb.com/series/goedele-on-top/seasons/official/3"></a></td>
+		<td><a href="https://www.vijf.be/goedele-on-top#afleveringen"></a></td>
+		<td><a href="https://www.videoland.com/series/1197/goedele-on-top/3307"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Labor of Love (do)</td>
+		<td><a href="https://www.thetvdb.com/series/labor-of-love/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=labor+of+love"></a></td>
+		<td><a href="https://rmz.cr/labor-of-love"></a></td>
+		<td><a href="https://eztv.re/search/labor-of-love"></a></td>
+		<td><a href="https://en.wikipedia.org/wiki/Labor_of_Love_(TV_series)"></a></td>
+		<td><a href="https://epguides.com/LaborofLove/"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/labor-of-love/listings/"></a></td>
+		<td><a href="https://www.fox.com/labor-of-love/"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Coronavirus, Explained</td>
+		<td><a href="https://www.thetvdb.com/series/coronavirus-explained/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=coronavirus+explained"></a></td>
+		<td><a href="https://rmz.cr/coronavirus-explained"></a></td>
+		<td><a href="https://www.netflix.com/be/title/81273378"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The Aquarium</td>
+		<td><a href="https://thetvdb.com/series/the-aquarium"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=6497&search=Search"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?f=131&t=276478&p=1611231"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Yasmine (do 16u)</td>
+		<td><a href="https://www.youtube.com/channel/UCwZBXgmyvUJQW2-DCY9sf9Q"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>C&Q wat een bevalling! (vr 17u)</td>
+		<td><a href="https://www.youtube.com/lindameiden"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Flowjob (woe 16u)</td>
+		<td><a href="https://www.youtube.com/playlist?list=PLy8iBaOQWSCosrRzP9r6sBEiOu8MI7aQg"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Dating #NoFilter</td>
+		<td><a href="https://www.thetvdb.com/series/dating-nofilter"></a></td>
+		<td><a href="https://www.nbc.com/dating-no-filter"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The team</td>
+		<td><a href="https://www.thetvdb.com/series/the-team"></a></td>
+		<td><a href="https://rarbgmirror.com/tv/tt3681610/"></a></td>
+		<td><a href="https://www.nzbserver.com/?search%5Btree%5D=%7Ecat0_z3&sortdir=DESC&sortby=stamp&search%5Bvalue%5D%5B%5D=filesize%3A%3E%3ADEF%3A0&search%5Bvalue%5D%5B%5D=filesize%3A%3C%3ADEF%3A274877906944&search%5Bvalue%5D%5B%5D=Title%3A%3D%3ADEF%3Athe+team+s01"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(Celebrity) Ex on the Beach (UK)</td>
+		<td><a href="https://www.thetvdb.com/series/ex-on-the-beach/seasons/official/10"></a></td>
+		<td><a href="https://www.mtv.be/shows/de21ku/celebrity-ex-on-the-beach"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/celebrity-ex-on-the-beach/23679031"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>TI Gossip</td>
+		<td><a href="https://www.thetvdb.com/series/temptation-gossip/seasons/3"></a></td>
+		<td><a href="https://www.rtl.nl/gemist/rtl-boulevard/"></a></td>
+		<td><a href="https://www.videoland.com/series/1246/temptation-gossip/2877"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>TI VIPS (do videoland)</td>
+		<td><a href="https://www.thetvdb.com/series/temptation-island-vips/seasons/2"></a></td>
+		<td><a href="https://www.videoland.com/series/1222/temptation-island-vips/2853"></a></td>
+		<td><a href="https://www.youtube.com/channel/UC_ykXc7v9zZQdOG5QvJqpgg"></a></td>
+		<td><a href="https://www.youtube.com/channel/UC7mvjWz_D4GegEGC8wzWVQw"></a></td>
+		<td><a href="https://www.forumfeminarum.nl/t/temptation-island/1299/3719"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>charlotte show (maandag MTV)</td>
+		<td><a href="https://www.thetvdb.com/series/345164"></a></td>
+		<td><a href="https://www.mtv.be/shows/q15kpj/the-charlotte-show"></a></td>
+		<td><a href="https://www.tvgids.tv/tv/the-charlotte-show/21982371"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Callboys (do vier)</td>
+		<td><a href="https://www.thetvdb.com/series/callboys/seasons/2"></a></td>
+		<td><a href="https://www.vier.be/video/callboys/callboys-s2"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Derry Girls</td>
+		<td><a href="https://www.thetvdb.com/series/derry-girls"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7120662/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-592515"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80238565"></a></td>
+		<td><a href="https://epguides.com/DerryGirls/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Love Island</td>
+		<td><a href="https://www.thetvdb.com/series/love-island-nl"></a></td>
+		<td><a href="https://www.vier.be/video/love-island/love-island-s1"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>blind getrouwd australie</td>
+		<td><a href="https://eztv.re/shows/4323/married-at-first-sight-australia/"></a></td>
+		<td><a href="https://vtm.be/vtmgo/blind-getrouwd-australie~p5b0164b8-e851-46fc-b9f0-959d2eae08ce"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Pano</td>
+		<td><a href="https://www.thetvdb.com/series/341992"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/pano.relevant/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Don't Worry, Be Happy (do vier)</td>
+		<td><a href="https://www.thetvdb.com/series/dont-worry-be-happy"></a></td>
+		<td><a href="https://www.vier.be/video/dont-worry-be-happy/dont-worry-be-happy"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Heder</td>
+		<td><a href="https://www.thetvdb.com/series/heder/seasons/official/1"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/heder/1/heder-s1a1/"></a></td>
+		<td><a href="https://www.imdb.com/title/tt9318602/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Jersey Shore</td>
+		<td><a href="https://www.thetvdb.com/series/338539"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?f=132&t=157431&p=924008#p924008"></a></td>
+		<td><a href="https://www.mtvasia.com/shows/ekx91a/jersey-shore-S1/episodes"></a></td>
+		<td><a href="https://epguides.com/JerseyShore/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Celebs gaan daten (vr)</td>
+		<td><a href="https://www.thetvdb.com/series/celebs-gaan-daten/seasons/1"></a></td>
+		<td><a href="https://www.vijf.be/video/celebs-gaan-daten/celebs-gaan-daten-s1"></a></td>
+		<td><a href="https://www.tvgids.tv/op-tv/celebs-gaan-daten?ref=zoekbalk"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Ex on the Beach US</td>
+		<td><a href="https://www.thetvdb.com/series/ex-on-the-beach-us/seasons/5"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt8285922/"></a></td>
+		<td><a href="https://www.mtv.be/shows/ilv1gm/ex-on-the-beach-usa"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>All of Us Are Dead</td>
+		<td><a href="https://thetvdb.com/series/all-of-us-are-dead/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=all+of+us+are+dead"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt14169960/"></a></td>
+		<td><a href="https://rmz.cr/all-of-us-are-dead"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/all-of-us-are-dead/listings/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/81237994"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/all_of_us_are_dead/s01"></a></td>
+	</tr>
+
+	<tr><td>Naked and Afraid of Love</td>
+		<td><a href="https://thetvdb.com/series/naked-afraid-of-love/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=naked%20and%20afraid%20of%20love"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/naked-and-afraid-of-love/listings/"></a></td>
+		<td><a href="https://www.amazon.com/Naked-Afraid-Love-Season-1/dp/B09CK1FL74"></a></td>
+		<td><a href="https://www.discovery.com/shows/naked-and-afraid-of-love"></a></td>
+		<td><a href="https://eztv.re/shows/329646/naked-and-afraid-of-love/"></a></td>
+	</tr>
+
+	<tr><td>Thin Ice</td>
+		<td><a href="https://thetvdb.com/series/tunn-is"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/#letter-t"></a></td>
+	</tr>
+
+	<tr><td>Catfish The TV Show</td>
+		<td><a href="https://www.thetvdb.com/series/catfish-the-tv-show"></a></td>
+		<td><a href="https://www.mtv.be/shows/55vxjl/catfish-the-tv-show"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt2498968/"></a></td>
+		<td><a href="https://sharethefiles.com/forum/viewtopic.php?t=226201"></a></td>
+		<td><a href="https://eztv-torrent.com/tv-series/catfish-the-tv-show-608">eztv tor</a></td>
+		<td><a href="https://epguides.com/Catfish/"></a></td>
+		<td><a href="https://www.rmz.cr/catfish-the-tv-show"></a></td>
+		<td><a href="https://eztv.re/shows/1351/catfish-the-tv-show/"></a></td>
+		<td><a href="https://epguides.com/Catfish/"></a></td>
+		<td><a href="https://www.mtvasia.com/shows/rviudd/catfish-the-tv-show-S1/episodes">mtv asia</a></td>
+		<td><a href="https://ww3.123movies.domains/tvseries/catfish-the-show-season-5/ObC9W3Pj/qWJfzjGQ/pGnpfeuo-watch-free.html"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+
+	<tr><td>(MA) David & Annie: After the 90 Days</td>
+		<td><a href="https://thetvdb.com/series/david-annie-after-the-90-days/seasons/official/1"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/david-and-annie-after-the-90-days/listings/"></a></td>
+		<td><a href="https://go.tlc.com/show/david-annie-after-the-90-days-tlc-atve-us"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/david_and_annie_after_the_90_days/s01"></a></td>
+	</tr>
+
+	<tr><td>(MA) Loren & Alexei: After the 90 Days</td>
+		<td><a href="https://thetvdb.com/series/loren-alexei-after-the-90-days/seasons/official/1"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/loren-and-alexei-after-the-90-days/listings/"></a></td>
+		<td><a href="https://go.tlc.com/show/loren-alexei-after-the-90-days-tlc-atve-us"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/loren_and_alexei_after_the_90_days/s01"></a></td>
+	</tr>
+	
+	<tr><td>(DO) Raised by Wolves</td>
+		<td><a href="https://thetvdb.com/series/raised-by-wolves-2020/seasons/official/2"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=raised%20by%20wolves%202020"></a></td>
+		<td><a href="https://search.rlsbb.ru/?s=raised%20by%20wolves&p=1"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt9170108/"></a></td>
+		<td><a href="https://rmz.cr/raised-by-wolves-2020"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-963667"></a></td>
+		<td><a href="https://www.addic7ed.com/show/8061"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/raised-by-wolves/listings/"></a></td>
+		<td><a href="https://play.hbomax.com/page/urn:hbo:page:GX0WFcAlf5r5cuAEAAADu:type:series">hbomax</a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/raised_by_wolves_2020/s02"></a></td>
+	</tr>
+
+	<tr><td>(VR) The Masked Singer</td>
+		<td><a href="https://thetvdb.com/series/388662-the-masked-singer/seasons/official/2"></a></td>
+		<td><a href="https://vtm.be/vtmgo/the-masked-singer~p596797e7-e743-4140-bc5a-4f1eb5bce935"></a></td>
+	</tr>
+
+
+
+	<tr><td>(ZO) Love Off the Grid</td>
+		<td><a href="https://thetvdb.com/series/love-off-the-grid/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=love%20off%20the%20grid"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt17079996/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/love-off-the-grid/listings/"></a></td>
+		<td><a href="https://www.amazon.com/Love-Off-Grid-Season-1/dp/B09KCJJ539"></a></td>
+		<td><a href="https://www.discoveryplus.com/show/love-off-the-grid-us"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>(ZO) The Walking Dead</td>
+		<td><a href="https://thetvdb.com/series/the-walking-dead/seasons/official/11"></a></td>
+		<td><a href="https://rmz.cr/the-walking-dead"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt1520211/"></a></td>
+		<td><a href="https://www.addic7ed.com/show/1175"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-62008#season-10"></a></td>
+		<td><a href="https://thefutoncritic.com/showatch/walking-dead/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/the_walking_dead/s11"></a></td>
+	</tr>
+
+	<tr><td>(ZO) 90DF BT90D</td>
+		<td><a href="https://thetvdb.com/series/90-day-fiance-before-the-90-days/seasons/official/5"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=before+the+90"></a></td>
+		<td><a href="https://rmz.cr/90-day-fiance-before-the-90-days"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=3234&search=Search"></a></td>
+		<td><a href="https://www.dplay.nl/programmas/90-day-fiance-before-the-90-days">Dplay</a></td>
+		<td><a href="https://go.tlc.com/show/90-day-fiance-before-the-90-days-tlc-atve-us"></a></td>
+		<td><a href="https://eztv-torrent.com/tv-series/90-day-fiance-before-the-90-days-50"></a></td>
+		<td><a href="https://tvsplurge.io/shows/90-day-fiance-before-the-90-days/season-4/">tvsplurge</a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-fiance-before-the-90-days/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/90_day_fianc_before_the_90_days/s05"></a></td>
+		<td><a href="https://play.google.com/store/tv/show/90_Day_Fiance_Before_The_90_Days?id=38pw9OUvDcu3gIjey3JcFA"></a></td>
+	</tr>
+
+	<tr><td>(WO) Temptation Island USA</td>
+		<td><a href="https://www.thetvdb.com/series/temptation-island-2019/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=temptation+island"></a></td>
+		<td><a href="https://rmz.cr/temptation-island-2019"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt9174576/"></a></td>
+		<td><a href="https://megaddl.co/?s=temptation+island+2019"></a></td>
+		<td><a href="https://www.usanetwork.com/temptation-island"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/temptation-island/listings/"></a></td>
+		<td><a href="https://epguides.com/TemptationIsland_2019/"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(DO) Siesta Key</td>
+		<td><a href="https://www.thetvdb.com/series/siesta-key/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=siesta%20key"></a></td>
+		<td><a href="https://www.mtv.nl/shows/siesta-key"></a></td>
+		<td><a href="https://rmz.cr/siesta-key"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7183282/"></a></td>
+		<td><a href="https://epguides.com/SiestaKey/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/siesta-key/listings/"></a></td>
+		<td><a href="https://www.mtv.com/shows/siesta-key"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(VR) Love After Lockup</td>
+		<td><a href="https://thetvdb.com/series/341174-show/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=love%20after%20lockup"></a></td>
+		<td><a href="https://rmz.cr/love-after-lockup"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt7721986/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/love-after-lockup/listings/">LOL</a></td>
+		<td><a href="http://thefutoncritic.com/showatch/love-after-lockup-life-after-lockup/listings/">LAL</a></td>
+		<td><a href="http://thefutoncritic.com/showatch/love-during-lockup/listings/">LDL</a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=4248&search=Search"></a></td>
+		<td><a href="https://www.wetv.com/shows/love-after-lockup--35406">LOL</a></td>
+		<td><a href="https://www.wetv.com/shows/life-after-lockup--35401">LAL</a></td>
+		<td><a href="https://www.wetv.com/shows/love-during-lockup--1051298">LDL</a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/love_after_lockup/s04"></a></td>
+	</tr>
+	
+	<tr><td>(ZO) Fear The Walking Dead</td>
+		<td><a href="https://thetvdb.com/series/fear-the-walking-dead/seasons/official/7"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=fear+the+walking+dead"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt3743822/"></a></td>
+		<td><a href="https://rmz.cr/fear-the-walking-dead"></a></td>
+		<td><a href="https://www.addic7ed.com/show/5105"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-191305"></a></td>
+		<td><a href="https://www.amc.com/shows/fear-the-walking-dead/episodes--46337"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/fear-the-walking-dead/listings/"></a></td>
+		<td><a href="https://epguides.com/FeartheWalkingDead/"></a></td>
+	</tr>
+
+	<tr><td>(DO) Ex on the Beach (US)</td>
+		<td><a href="https://www.thetvdb.com/series/ex-on-the-beach-us/seasons/official/5"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=ex+on+the+beach"></a></td>
+		<td><a href="https://www.mtv.com/shows/ex-on-the-beach"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/ex-on-the-beach/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Stranger Things</td>
+		<td><a href="https://thetvdb.com/series/stranger-things/seasons/official/4"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt4574334/"></a></td>
+		<td><a href="https://www.opensubtitles.org/en/ssearch/sublanguageid-dut/idmovie-464588"></a></td>
+		<td><a href="https://www.addic7ed.com/show/5845"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80057281"></a></td>
+		<td><a href="https://www.epguides.com/strangerthings/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/stranger-things/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/stranger_things/s04"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+	
+	<tr><td>The Umbrella Academy</td>
+		<td><a href="https://thetvdb.com/series/the-umbrella-academy/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=umbrella+academy"></a></td>
+		<td><a href="https://rmz.cr/the-umbrella-academy"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt1312171/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-717213"></a></td>
+		<td><a href="https://www.addic7ed.com/show/7155"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80186863"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/umbrella-academy/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/the_umbrella_academy/s03"></a></td>
+	</tr>
+	
+	<tr><td>The Terminal List</td>
+		<td><a href="https://thetvdb.com/series/the-terminal-list/seasons/official/2"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=terminal%20list&cat=all"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-1151591"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt11743610/"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/terminal-list/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/the_terminal_list/s02"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(DI) The Secret of Skinwalker Ranch</td>
+		<td><a href="https://thetvdb.com/series/the-secret-of-skinwalker-ranch/seasons/official/3"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=secret+of+skinwalker"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt10589968/"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=62716&search=Search"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/secret-of-skinwalker-ranch/listings/"></a></td>
+		<td><a href="https://play.history.com/shows/the-secret-of-skinwalker-ranch#episodes"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/skinwalker/s03"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=secret%20of%20skinwalker&cat=all"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>The Real Housewives of New York City</td>
+		<td><a href="https://thetvdb.com/series/the-real-housewives-of-new-york-city"></a></td>
+		<td><a href="https://www.telenettv.be/nl/tv/channel-asset.html/lgi-be-prod-master%3Afoxbelgium/location/28001/1643369700000.html"></a></td>
+		<td><a href="https://www.netflix.com/be/title/70143834"></a></td>
+		<td><a href="https://www.bravotv.com/the-real-housewives-of-new-york-city/episode-guide">Bravo</a></td>
+		<td><a href="http://www.thefutoncritic.com/showatch/real-housewives-of-new-york-city/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/the_real_housewives_of_new_york_city"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>(MA) 90 Day Diaries</td>
+		<td><a href="https://www.thetvdb.com/series/90-day-diaries/seasons/official/4"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=90+day+diaries"></a></td>
+		<td><a href="https://rmz.cr/90-day-diaries"></a></td>
+		<td><a href="https://eztv.re/search/?q1=&q2=214246&search=Search"></a></td>
+		<td><a href="https://tv.apple.com/us/show/90-day-diaries/umc.cmc.3cuxlk18ynkg6mw13l75zrsjv"></a></td>
+		<td><a href="https://www.tlc.com/shows/90-day-diaries/episodes"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/90-day-diaries/listings/"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=90%20day%20diaries&cat=all"></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+<!-- -----------------------------------------------------END HIATUS --------------------------------------------------------------------------------- -->
+
+
+<!-- -----------------------------------------------------START ENDED/CANCELED ----------------------------------------------------------------------- -->
+<!-- 
+
+	<tr><td>Twee zomers</td>
+		<td><a href="https://thetvdb.com/series/twee-zomers/seasons/official/1"></a></td>
+		<td><a href="https://www.vrt.be/vrtnu/a-z/twee-zomers/"></a></td>
+	</tr>
+
+	<tr><td>Chernobyl: The Lost Tapes</td>
+		<td><a href="https://thetvdb.com/series/chernobyl-the-lost-tapes"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=chernobyl+lost+tapes"></a></td>
+		<td><a href="https://www.sky.com/watch/title/programme/24e2aefc-3b3a-4a40-84a3-94526b6320a3/chernobyl-the-lost-tapes-24e2aefc-3b3a-4a40-84a3-94526b6320a3/episodes/season-0/episode-1"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Pam & Tommy</td>
+		<td><a href="https://thetvdb.com/series/pam-and-tommy/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=pam%20and%20tommy"></a></td>
+		<td><a href="https://rmz.cr/pam-tommy"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt13659418/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-994201"></a></td>
+		<td><a href="https://www.hulu.com/series/pam-tommy-78839250-a41a-4899-b8da-500ca59a4196"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/pam_and_tommy/s01"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/pam-and-tommy/listings/"></a></td>
+	</tr>
+
+	<tr><td>Escape at Dannemora</td>
+		<td><a href="https://thetvdb.com/series/escape-at-dannemora/seasons/official/1"></a></td>
+		<td><a href="https://scene-rls.net/releases/index.php?s=dannemora"></a></td>
+		<td><a href="https://rarbgaccess.org/torrent/ifyrp6z#expand"></a></td>
+		<td><a href="https://www.sho.com/escape-at-dannemora/season/1"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/escape-at-dannemora/listings/"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+
+	<tr><td>Resident Evil</td>
+		<td><a href="https://thetvdb.com/series/resident-evil/seasons/official/1"></a></td>
+		<td><a href="https://rarbgaccess.org/tv/tt9660182/"></a></td>
+		<td><a href="https://www.netflix.com/be/title/80996532"></a></td>
+		<td><a href="http://thefutoncritic.com/showatch/resident-evil/listings/"></a></td>
+		<td><a href="https://www.rottentomatoes.com/tv/resident_evil/s01"></a></td>
+		<td><a href="https://log.rlsbb.cc/search/?s=resident%20evil&cat=all"></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+	</tr>
+
+	<tr><td>Age of the Living Dead</td>
+		<td><a href="https://thetvdb.com/series/age-of-the-living-dead/seasons/official/2"></a></td>
+		<td><a href="https://rmz.cr/age-of-the-living-dead"></td>
+		<td><a href="https://rarbgaccess.org/tv/tt5338744/"></a></td>
+		<td><a href="https://www.opensubtitles.org/nl/ssearch/sublanguageid-dut/idmovie-777912"></a></td>
+		<td><a href="https://www.epguides.com/AgeoftheLivingDead/"></a></td>
+	</tr>
+
+
+
+
+-->
+<!-- -----------------------------------------------------END ENDED/CANCELED ----------------------------------------------------------------------- -->
+
+</table>
+<p>
+<a id="beneden" href="#boven" target="_self">&#8593; naar boven &#8593;</a>
+
+</body>
+</html>

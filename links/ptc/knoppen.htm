@@ -1,0 +1,170 @@
+<html><head>
+<base target="_blank">
+<base onclick="return popUnder(this);">
+
+</head>
+<body>
+<!-- <input type="button" value="Alle iPay" onclick="ipay(); this.value='done';"> -->
+<!-- <a href="https://www.ipay.nl">iPay</a>  -->
+
+
+<!-- &nbsp;|&nbsp; -->
+
+<input type="button" value="Alle CashBackDeals" onclick="cashbackdeals(); this.value='done';">
+<a href="https://nl-be.cashbackdeals.be/">CBD</a> 
+
+&nbsp;|&nbsp;
+
+<input type="button" value="Alle Nucash" onclick="nucash(); this.value='done';">
+<a href="https://www.nucash.be">NuCash</a>
+
+
+&nbsp;|&nbsp;
+
+<input type="button" value="Alle Enqueteclub" onclick="enqueteclub(); this.value='done'">
+<a href="https://www.enqueteclub.be">EC</a>
+
+<br>
+
+<input type="button" value="Alle start" onclick="alleopen();">
+<input type="button" value="Alle login" onclick="login();">
+
+
+<!--
+<br><br>
+via Tor: &nbsp;|&nbsp;
+
+<input type="button" value="Alle Ladycashback" onclick="ladycashback(); this.value='done'">
+<a href="https://www.ladycashback.be">LDCB</a>
+-->
+
+<p id="zoekterm" onclick="randomsearchterm()"></p>
+<input type="button" value="popup test" onclick="popuptest();">
+
+
+
+
+
+<script type = "text/javascript">
+function popUnder(node) {
+//window.alert("test");
+    var newWindow = window.open("about:blank", node.target);
+    newWindow.blur();
+    window.focus();
+    newWindow.location.href = node.href;
+    return false;
+}
+
+var domain="";
+var searchterm="";
+var arr = ["deurslot","hangslot","armband","schoen","nokia","huawei","boormachine","vijl","pokemon"];
+
+function randomsearchterm() {
+searchterm=arr[Math.floor(Math.random() * arr.length)];
+document.getElementById('zoekterm').innerHTML = "zoekterm: " + searchterm;
+}
+randomsearchterm()
+
+
+function login() {
+<!-- window.open("https://www.ipay.nl/user/autologin.php?module=bingo&salt=437e0fdae3edac9f43641d91e3f954e088186a4b&groupid=1&campaignid=992"); -->
+// window.open("https://www.ladycashback.be/user/autologin.php?module=bingo&salt=94ff0c3eb5360aa3784032df6beeb433c48fa67a&groupid=1&campaignid=937");
+window.open("https://www.nucash.be/user/autologin.php?module=bingo&salt=32237d1eaf86d9bb0e4f92f8fe9b289c273d9150&groupid=1&campaignid=937");
+window.open("https://nl-be.cashbackdeals.be/user/autologin.php?module=bingo&salt=614c887c1199c9e29cdfa63069a112f12ceea025&groupid=1&campaignid=1197");
+window.open("https://www.enqueteclub.be/user/autologin.php?module=bingo&salt=5e8e3c830352248712b2bfbc7aec337235ac5709&groupid=1&campaignid=935");
+}
+
+function ipay() {
+domain="https://www.ipay.nl"
+window.open(domain + "/shops/click-earn-campaigns.php");
+window.open(domain + "/user/find-the-code.php");
+window.open(domain + "/shops/bannerkliks.php");
+window.open(domain + "/user/jackpot.php");
+window.open(domain + "/onlinepanel-pl");
+window.open(domain + "/user/inbox-surveys.php");
+window.open(domain + "/user/cashmail.php");
+}
+
+function cashbackdeals() {
+domain="https://nl-be.cashbackdeals.be"
+<!-- window.open(domain + "/products/kelkoo-products.php?csrf_token=&csrf_page=kelkoo-products&s=" + searchterm ); -->
+// window.open(domain + "/user/advent-calander.php");
+<!-- window.open(domain + "/user/find-the-code.php"); -->
+window.open(domain + "/shops/bannerkliks");
+<!-- window.open(domain + "/user/jackpot.php"); -->
+<!-- window.open(domain + "/shops/click-earn-campaigns.php"); -->
+<!-- window.open(domain + "/onlinepanel-pl"); -->
+<!-- window.open(domain + "/user/inbox-surveys.php"); -->
+window.open(domain + "/user/cashmail");
+}
+
+function nucash() {
+domain="https://www.nucash.be"
+<!-- window.open(domain + "/products/kelkoo-products.php?csrf_token=&csrf_page=kelkoo-products&s=" + searchterm ); -->
+<!-- window.open(domain + "/user/find-the-code.php"); -->
+window.open(domain + "/shops/bannerkliks");
+<!-- window.open(domain + "/user/jackpot.php"); -->
+<!-- window.open(domain + "/shops/click-earn-campaigns.php"); -->
+<!-- window.open(domain + "/onlinepanel-pl"); -->
+<!-- window.open(domain + "/user/inbox-surveys.php"); -->
+window.open(domain + "/user/cashmail");
+}
+
+function ladycashback() {
+domain="https://www.ladycashback.be"
+window.open(domain + "/products/kelkoo-products.php?csrf_token=&csrf_page=kelkoo-products&s=" + searchterm );
+window.open(domain + "/user/find-the-code.php");
+window.open(domain + "/shops/bannerkliks.php");
+window.open(domain + "/user/jackpot.php");
+window.open(domain + "/shops/click-earn-campaigns.php");
+window.open(domain + "/user/inbox-surveys.php");
+window.open(domain + "/onlinepanel-pl");
+window.open(domain + "/user/cashmail.php");
+}
+
+function enqueteclub() {
+domain="https://www.enqueteclub.be"
+<!-- window.open(domain + "/products/kelkoo-products.php?csrf_token=&csrf_page=kelkoo-products&s=" + searchterm ); -->
+<!-- window.open(domain + "/user/find-the-code.php"); -->
+window.open(domain + "/shops/bannerkliks");
+<!-- window.open(domain + "/user/jackpot.php"); -->
+<!-- window.open(domain + "/shops/click-earn-campaigns.php"); -->
+<!-- window.open(domain + "/user/inbox-surveys.php"); -->
+<!-- window.open(domain + "/onlinepanel-pl"); -->
+window.open(domain + "/user/cashmail");
+}
+
+function alleopen() {
+<!-- window.open("https://www.ipay.nl/"); -->
+window.open("https://nl-be.cashbackdeals.be");
+window.open("https://www.nucash.be");
+// window.open("https://www.ladycashback.be/");
+window.open("https://www.enqueteclub.be");
+}
+
+function popuptest() {
+window.open("about:blank");
+window.open("about:blank");
+window.open("about:blank");
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
